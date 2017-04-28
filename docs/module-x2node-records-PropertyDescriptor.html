@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>X2 Framework for Node.js Class: PropertyDescriptor</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">X2 Framework for Node.js</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.X2DataError.html">x2node-common.X2DataError</a></li><li><a href="module-x2node-common.X2SyntaxError.html">x2node-common.X2SyntaxError</a></li><li><a href="module-x2node-common.X2UsageError.html">x2node-common.X2UsageError</a></li><li><a href="module-x2node-dbos.BasicDBDriver.html">x2node-dbos.BasicDBDriver</a></li><li><a href="module-x2node-dbos-DBOFactory.html">x2node-dbos~DBOFactory</a></li><li><a href="module-x2node-dbos-DeleteDBO.html">x2node-dbos~DeleteDBO</a></li><li><a href="module-x2node-dbos-FetchDBO.html">x2node-dbos~FetchDBO</a></li><li><a href="module-x2node-dbos-InsertDBO.html">x2node-dbos~InsertDBO</a></li><li><a href="module-x2node-dbos-Transaction.html">x2node-dbos~Transaction</a></li><li><a href="module-x2node-dbos-UpdateDBO.html">x2node-dbos~UpdateDBO</a></li><li><a href="module-x2node-patches-RecordPatch.html">x2node-patches~RecordPatch</a></li><li><a href="module-x2node-pointers-RecordElementPointer.html">x2node-pointers~RecordElementPointer</a></li><li><a href="module-x2node-records-LibraryConstructionContext.html">x2node-records~LibraryConstructionContext</a></li><li><a href="module-x2node-records-PropertiesContainer.html">x2node-records~PropertiesContainer</a></li><li><a href="module-x2node-records-PropertyDescriptor.html">x2node-records~PropertyDescriptor</a></li><li><a href="module-x2node-records-RecordTypeDescriptor.html">x2node-records~RecordTypeDescriptor</a></li><li><a href="module-x2node-records-RecordTypesLibrary.html">x2node-records~RecordTypesLibrary</a></li><li><a href="module-x2node-records-RecordTypesLibraryFactory.html">x2node-records~RecordTypesLibraryFactory</a></li><li><a href="module-x2node-rsparser-ResultSetParser.html">x2node-rsparser~ResultSetParser</a></li><li><a href="module-x2node-validators-ValidationContext.html">x2node-validators~ValidationContext</a></li><li><a href="module-x2node-validators-ValidationErrors.html">x2node-validators~ValidationErrors</a></li><li><a href="module-x2node-ws-auth-jwt-JWTAuthenticator.html">x2node-ws-auth-jwt~JWTAuthenticator</a></li><li><a href="module-x2node-ws-resources.CollectionResourceHandler.html">x2node-ws-resources.CollectionResourceHandler</a></li><li><a href="module-x2node-ws-resources.IndividualResourceHandler.html">x2node-ws-resources.IndividualResourceHandler</a></li><li><a href="module-x2node-ws-resources-ResourceHandlersFactory.html">x2node-ws-resources~ResourceHandlersFactory</a></li><li><a href="module-x2node-ws-resources-TransactionContext.html">x2node-ws-resources~TransactionContext</a></li><li><a href="module-x2node-ws-Application.html">x2node-ws~Application</a></li><li><a href="module-x2node-ws-ServiceCall.html">x2node-ws~ServiceCall</a></li><li><a href="module-x2node-ws-ServiceResponse.html">x2node-ws~ServiceResponse</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-dbos.PropertiesContainerWithDBOs.html">x2node-dbos.PropertiesContainerWithDBOs</a></li><li><a href="module-x2node-dbos.PropertyDescriptorWithDBOs.html">x2node-dbos.PropertyDescriptorWithDBOs</a></li><li><a href="module-x2node-dbos.RecordTypeDescriptorWithDBOs.html">x2node-dbos.RecordTypeDescriptorWithDBOs</a></li><li><a href="module-x2node-rsparser.PropertyDescriptorWithRSParser.html">x2node-rsparser.PropertyDescriptorWithRSParser</a></li><li><a href="module-x2node-validators.PropertyDescriptorWithValidators.html">x2node-validators.PropertyDescriptorWithValidators</a></li><li><a href="module-x2node-validators.RecordTypeDescriptorWithValidators.html">x2node-validators.RecordTypeDescriptorWithValidators</a></li><li><a href="module-x2node-ws-resources.HandlerExtension.html">x2node-ws-resources.HandlerExtension</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-ws-Application.html#event:shutdown">x2node-ws~Application#event:shutdown</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="modules_x2node-ws.Marshaller.html">modules:x2node-ws.Marshaller</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="external-Buffer.html">Buffer</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-EventEmitter.html">EventEmitter</a></li><li><a href="external-Url.html">Url</a></li><li><a href="http.external_IncomingMessage.html">IncomingMessage</a></li><li><a href="http.external_ServerResponse.html">ServerResponse</a></li><li><a href="net.external_Socket.html">Socket</a></li><li><a href="stream.external_Readable.html">Readable</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: PropertyDescriptor</h1>
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-x2node-records.html">x2node-records</a>~</span>
+        
+        PropertyDescriptor
+        </h2>
+        
+            <div class="class-description">Record property descriptor.</div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="PropertyDescriptor"><span class="type-signature"></span>new PropertyDescriptor(ctx, container, propName, propDef [, viewOfDesc])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <strong>Note:</strong> The constructor is not accessible from the client
+code. Property descriptors are created internally and are available via
+the property container's
+<a href="module-x2node-records-PropertiesContainer.html#getPropertyDesc">getPropertyDesc()</a>
+method.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ctx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-records-LibraryConstructionContext.html">module:x2node-records~LibraryConstructionContext</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Library
+construction context.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>container</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The
+container, to which the property belongs.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>propName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Property name.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>propDef</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Property definition.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>viewOfDesc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-records-PropertyDescriptor.html">module:x2node-records~PropertyDescriptor</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">For a view
+property, descriptor of the base property.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="allowDuplicates">
+    <h4 id="allowDuplicates"><span class="type-signature">&lt;readonly> </span>allowDuplicates<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        For a non-object array property, tells if duplicates values are allowed.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="container">
+    <h4 id="container"><span class="type-signature">&lt;readonly> </span>container<span class="type-signature"> :<a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Container, to which the property belongs.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="containerChain">
+    <h4 id="containerChain"><span class="type-signature">&lt;readonly> </span>containerChain<span class="type-signature"> :Array.&lt;<a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a>></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Container chain. The first element in the chain is the record type
+descriptor, the last element is the property container (same one as in
+<code>container</code> descriptor property).
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a>></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="definition">
+    <h4 id="definition"><span class="type-signature">&lt;readonly> </span>definition<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Property definition.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="modifiable">
+    <h4 id="modifiable"><span class="type-signature">&lt;readonly> </span>modifiable<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <code>true</code> if the property is modifiable. Note, that being not
+modifiable does not necessarily mean immutable. It merely means that
+setting a new value directly to the property is disallowed.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="name">
+    <h4 id="name"><span class="type-signature">&lt;readonly> </span>name<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Property name.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="nestedProperties">
+    <h4 id="nestedProperties"><span class="type-signature">&lt;readonly, nullable> </span>nestedProperties<span class="type-signature"> :<a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        For a nested object property (<code>scalarValueType</code> is
+"object"), the descriptors of the nested properties. For a reference
+property (<code>scalarValueType</code> is "ref"), the target record
+type descriptor. For a non-object, non-reference property, if it is
+not scalar the container describes a single property named "$value"
+with the scalar value type. If it is scalar, the
+<code>nestedProperties</code> value is <code>null</code>. For a
+polymorphic nested object or reference property, this is the
+polymoprhic container.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="optional">
+    <h4 id="optional"><span class="type-signature">&lt;readonly> </span>optional<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <code>true</code> if the property is optional.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="refTarget">
+    <h4 id="refTarget"><span class="type-signature">&lt;readonly> </span>refTarget<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Name of the target record type for a non-polymorphic reference property
+(<code>isRef()</code> returns <code>true</code>).
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="refTargets">
+    <h4 id="refTargets"><span class="type-signature">&lt;readonly> </span>refTargets<span class="type-signature"> :Array.&lt;string></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        For a polymoprhic reference property, a shortcut property that
+contains a list of names of all allowed referred record types. This is
+a shortcut for <code>nestedProperties.subtypes</code>.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="scalarValueType">
+    <h4 id="scalarValueType"><span class="type-signature">&lt;readonly> </span>scalarValueType<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Scalar value type of the property. One of "string", "number", "boolean",
+"datetime", "object" or "ref".
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="viewOfDesc">
+    <h4 id="viewOfDesc"><span class="type-signature">&lt;readonly> </span>viewOfDesc<span class="type-signature"> :<a href="module-x2node-records-PropertyDescriptor.html">module:x2node-records~PropertyDescriptor</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        For a view property, descriptor of the base property.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-records-PropertyDescriptor.html">module:x2node-records~PropertyDescriptor</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="isArray"><span class="type-signature"></span>isArray()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is an array.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if the property is an array.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isId"><span class="type-signature"></span>isId()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is a record (including nested object) id.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if the property is an id.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isMap"><span class="type-signature"></span>isMap()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is a map.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if the property is a map.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isPolymorphObject"><span class="type-signature"></span>isPolymorphObject()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        A shortcut method that tells if the property is a polymoprhic
+nested object property. Such property will have
+<code>scalarValueType</code> of "object" and its
+<code>nestedProperties.isPolymorphObject()</code> will return
+<code>true</code>.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if polymorphic nested object
+property.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isPolymorphObjectType"><span class="type-signature"></span>isPolymorphObjectType()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is a special hidden property describing the
+polymorphic object type. Any container whose
+<code>isPolymorphObject()</code> method returns <code>true</code> will
+have one such property. Note, that the property is hidden, so it is not
+listed in the container's <code>allPropertyNames</code> list, but it is
+available via the <code>hasProperty()</code> and
+<code>getPropertyDesc()</code> methods.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if type property.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isPolymorphRef"><span class="type-signature"></span>isPolymorphRef()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        A shortcut method that tells if the property is a polymoprhic
+reference property. Such property will have
+<code>scalarValueType</code> of "object" and its
+<code>nestedProperties.isPolymorphRef()</code> will return
+<code>true</code>.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if polymorphic reference
+property.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isRef"><span class="type-signature"></span>isRef()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is a non-polymorphic reference
+(<code>scalarValueType</code> is "ref"). Note, that this does not
+include polymorphic reference properties whose
+<code>scalarValueType</code> is "object".
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if the property is a non-polymorphic
+reference.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isScalar"><span class="type-signature"></span>isScalar()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is scalar.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if the property is scalar.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isSubtype"><span class="type-signature"></span>isSubtype()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is a pseudo-property representing its polymorphic
+container's subtype-specific properties. Every polymoprhic container
+(container descriptor's <code>isPolymorph()</code> method returns
+<code>true</code>) has one such pseudo-property for each subtype. For a
+polymorphic object container, the property name is the subtype name, the
+type is an optional scalar "object", and the nested properties are the
+subtype-specific properties. For a polymoprhic reference container, the
+property name is one of the referred record type names and the type is
+"ref".
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if a subtype pseudo-property.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isView"><span class="type-signature"></span>isView()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is a view of another property.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if the property is a view.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Boyle Software, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "x2node-api-reference",
+  "version": "1.0.0-alpha.0",
+  "description": "Generated X2 Framework API reference documentation.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boylesoftware/x2node-api-reference.git"
+  },
+  "author": "Lev Himmelfarb <lev@boylesoftware.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boylesoftware/x2node-api-reference/issues"
+  },
+  "homepage": "https://github.com/boylesoftware/x2node-api-reference",
+  "devDependencies": {
+    "ink-docstrap": "^1.3.0",
+    "jsdoc": "^3.4.3"
+  }
+}

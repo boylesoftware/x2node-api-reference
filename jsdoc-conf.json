@@ -1,0 +1,21 @@
+{
+  "tags": {
+    "allowUnknownTags": false,
+    "dictionaries": [ "jsdoc" ]
+  },
+  "opts": {
+    "recurse": true,
+    "pedantic": true
+  },
+  "source": {
+    "excludePattern": "/node_modules/"
+  },
+  "templates": {
+    "outputSourceFiles": false,
+    "systemName": "X2 Framework for Node.js",
+    "copyright": "Boyle Software, Inc.",
+    "includeDate": false,
+    "navType": "inline",
+    "theme": "spacelab"
+  }
+}

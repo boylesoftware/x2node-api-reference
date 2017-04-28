@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>X2 Framework for Node.js Class: RecordElementPointer</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">X2 Framework for Node.js</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.X2DataError.html">x2node-common.X2DataError</a></li><li><a href="module-x2node-common.X2SyntaxError.html">x2node-common.X2SyntaxError</a></li><li><a href="module-x2node-common.X2UsageError.html">x2node-common.X2UsageError</a></li><li><a href="module-x2node-dbos.BasicDBDriver.html">x2node-dbos.BasicDBDriver</a></li><li><a href="module-x2node-dbos-DBOFactory.html">x2node-dbos~DBOFactory</a></li><li><a href="module-x2node-dbos-DeleteDBO.html">x2node-dbos~DeleteDBO</a></li><li><a href="module-x2node-dbos-FetchDBO.html">x2node-dbos~FetchDBO</a></li><li><a href="module-x2node-dbos-InsertDBO.html">x2node-dbos~InsertDBO</a></li><li><a href="module-x2node-dbos-Transaction.html">x2node-dbos~Transaction</a></li><li><a href="module-x2node-dbos-UpdateDBO.html">x2node-dbos~UpdateDBO</a></li><li><a href="module-x2node-patches-RecordPatch.html">x2node-patches~RecordPatch</a></li><li><a href="module-x2node-pointers-RecordElementPointer.html">x2node-pointers~RecordElementPointer</a></li><li><a href="module-x2node-records-LibraryConstructionContext.html">x2node-records~LibraryConstructionContext</a></li><li><a href="module-x2node-records-PropertiesContainer.html">x2node-records~PropertiesContainer</a></li><li><a href="module-x2node-records-PropertyDescriptor.html">x2node-records~PropertyDescriptor</a></li><li><a href="module-x2node-records-RecordTypeDescriptor.html">x2node-records~RecordTypeDescriptor</a></li><li><a href="module-x2node-records-RecordTypesLibrary.html">x2node-records~RecordTypesLibrary</a></li><li><a href="module-x2node-records-RecordTypesLibraryFactory.html">x2node-records~RecordTypesLibraryFactory</a></li><li><a href="module-x2node-rsparser-ResultSetParser.html">x2node-rsparser~ResultSetParser</a></li><li><a href="module-x2node-validators-ValidationContext.html">x2node-validators~ValidationContext</a></li><li><a href="module-x2node-validators-ValidationErrors.html">x2node-validators~ValidationErrors</a></li><li><a href="module-x2node-ws-auth-jwt-JWTAuthenticator.html">x2node-ws-auth-jwt~JWTAuthenticator</a></li><li><a href="module-x2node-ws-resources.CollectionResourceHandler.html">x2node-ws-resources.CollectionResourceHandler</a></li><li><a href="module-x2node-ws-resources.IndividualResourceHandler.html">x2node-ws-resources.IndividualResourceHandler</a></li><li><a href="module-x2node-ws-resources-ResourceHandlersFactory.html">x2node-ws-resources~ResourceHandlersFactory</a></li><li><a href="module-x2node-ws-resources-TransactionContext.html">x2node-ws-resources~TransactionContext</a></li><li><a href="module-x2node-ws-Application.html">x2node-ws~Application</a></li><li><a href="module-x2node-ws-ServiceCall.html">x2node-ws~ServiceCall</a></li><li><a href="module-x2node-ws-ServiceResponse.html">x2node-ws~ServiceResponse</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-dbos.PropertiesContainerWithDBOs.html">x2node-dbos.PropertiesContainerWithDBOs</a></li><li><a href="module-x2node-dbos.PropertyDescriptorWithDBOs.html">x2node-dbos.PropertyDescriptorWithDBOs</a></li><li><a href="module-x2node-dbos.RecordTypeDescriptorWithDBOs.html">x2node-dbos.RecordTypeDescriptorWithDBOs</a></li><li><a href="module-x2node-rsparser.PropertyDescriptorWithRSParser.html">x2node-rsparser.PropertyDescriptorWithRSParser</a></li><li><a href="module-x2node-validators.PropertyDescriptorWithValidators.html">x2node-validators.PropertyDescriptorWithValidators</a></li><li><a href="module-x2node-validators.RecordTypeDescriptorWithValidators.html">x2node-validators.RecordTypeDescriptorWithValidators</a></li><li><a href="module-x2node-ws-resources.HandlerExtension.html">x2node-ws-resources.HandlerExtension</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-ws-Application.html#event:shutdown">x2node-ws~Application#event:shutdown</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="modules_x2node-ws.Marshaller.html">modules:x2node-ws.Marshaller</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="external-Buffer.html">Buffer</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-EventEmitter.html">EventEmitter</a></li><li><a href="external-Url.html">Url</a></li><li><a href="http.external_IncomingMessage.html">IncomingMessage</a></li><li><a href="http.external_ServerResponse.html">ServerResponse</a></li><li><a href="net.external_Socket.html">Socket</a></li><li><a href="stream.external_Readable.html">Readable</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: RecordElementPointer</h1>
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-x2node-pointers.html">x2node-pointers</a>~</span>
+        
+        RecordElementPointer
+        </h2>
+        
+            <div class="class-description">Record element pointer, which is an implementation of
+<a href="https://tools.ietf.org/html/rfc6901">RFC 6901</a> JSON Pointer.</div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="RecordElementPointer"><span class="type-signature"></span>new RecordElementPointer(parent, pointerToken, propDesc, propPath, collectionElement [, collectionElementIndex], childrenContainer)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <strong>Note:</strong> The constructor is not accessible from the client
+code. Prointer instances are created using module's
+<a href="module-x2node-pointers.html#.parse">parse()</a> function.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>parent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-pointers-RecordElementPointer.html">module:x2node-pointers~RecordElementPointer</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Parent
+pointer, or <code>null</code> for the root pointer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointerToken</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Pointer token (no dash, no tilda escapes),
+or <code>null</code> if root pointer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>propDesc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-records-PropertyDescriptor.html">module:x2node-records~PropertyDescriptor</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Descriptor of
+the property, at which the pointer points, or <code>null</code> for the
+root pointer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>propPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Path to the property, at which the pointer
+points, or empty string for the root pointer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>collectionElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><code>true</code> if the pointer is for
+an array or map element.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>collectionElementIndex</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If collection element
+pointer, this collection element index.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>childrenContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Child properties container, if applicable.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="collectionElement">
+    <h4 id="collectionElement"><span class="type-signature">&lt;readonly> </span>collectionElement<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <code>true</code> if the pointer is for an array or map element.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="collectionElementIndex">
+    <h4 id="collectionElementIndex"><span class="type-signature">&lt;readonly> </span>collectionElementIndex<span class="type-signature"> :number|string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        For a collection element pointer (<code>collectionElement</code> is
+<code>true</code>), the element index, which, for an array element, is a
+number or a dash ("-") and for a map element&mdash;the map key string.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="propDesc">
+    <h4 id="propDesc"><span class="type-signature">&lt;readonly, nullable> </span>propDesc<span class="type-signature"> :<a href="module-x2node-records-PropertyDescriptor.html">module:x2node-records~PropertyDescriptor</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Descriptor of the property, at which the pointer points, or
+<code>null</code> if root pointer.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-records-PropertyDescriptor.html">module:x2node-records~PropertyDescriptor</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="propPath">
+    <h4 id="propPath"><span class="type-signature">&lt;readonly> </span>propPath<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Path of the property, at which the pointer points, or empty string if root
+pointer.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="addValue"><span class="type-signature"></span>addValue(record, value)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add value to the property, at which the pointer points. If the pointer
+points at an array element, the value is inserted into the array at the
+specified by the pointer location. In all other cases, any existing value
+is simply replaced.
+
+<p>Note, that the method is not allowed on the root pointer.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>record</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The record.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value to add. May not be <code>undefined</code> (use
+<a href="module-x2node-pointers-RecordElementPointer.html#removeValue">removeValue()</a>
+method to delete optional property values). A <code>null</code> is not
+allowed for nested object array and map elements. <strong>The method does
+not validate the value in any other way beyond that.</strong></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    <ul>
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If called on a root pointer,
+or inappropriate value is provided.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2UsageError.html">module:x2node-common.X2UsageError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the property cannot be
+reached.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2DataError.html">module:x2node-common.X2DataError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        </ul>
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The previous value as if
+<a href="module-x2node-pointers-RecordElementPointer.html#getValue">getValue()</a>
+was called for the pointer before modifying the record.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="createChildPointer"><span class="type-signature"></span>createChildPointer(pointerToken)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Create immediate child pointer of this pointer. This is faster than
+parsing the pointer from string notation as it does not have to re-parse
+the prefix.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointerToken</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Token to append to the pointer to form the
+child pointer (without the leading slash).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    
+            
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If resulting pointer would be
+invalid.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2UsageError.html">module:x2node-common.X2UsageError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+
+        
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Child pointer.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-x2node-pointers-RecordElementPointer.html">module:x2node-pointers~RecordElementPointer</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getValue"><span class="type-signature"></span>getValue(record [, traceFunc])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get value of the property, at which the pointer points.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>record</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The record, from which to get the value. Must match
+the pointer's record type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>traceFunc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-pointers-RecordElementPointer.html#~traceCallback">module:x2node-pointers~RecordElementPointer~traceCallback</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Optional trace callback called for every prefix pointer starting from the
+root pointer and ending with this pointer.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    
+            
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the property cannot be
+reached.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2DataError.html">module:x2node-common.X2DataError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+
+        
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The property value, or <code>null</code> if no value. For
+absent array and map elements returns <code>undefined</code>.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isChildOf"><span class="type-signature"></span>isChildOf(otherPtr)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if this pointer points to a child of the specified other pointer
+(that is the other pointer is a "proper prefix" of this pointer).
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>otherPtr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-pointers-RecordElementPointer.html">module:x2node-pointers~RecordElementPointer</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The other
+pointer.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if child.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isRoot"><span class="type-signature"></span>isRoot()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the pointer is the root pointer.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> If root pointer.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="removeValue"><span class="type-signature"></span>removeValue(record)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Erase the property, at which the pointer points. If the pointer points at
+an array element, the element is deleted from the array.
+
+<p>Note, that the method is not allowed on the root pointer. Also, not
+allowed for a dash array element pointer.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>record</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The record.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    <ul>
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If called on a root pointer,
+or a dash array index pointer.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2UsageError.html">module:x2node-common.X2UsageError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the property cannot be
+reached.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2DataError.html">module:x2node-common.X2DataError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        </ul>
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The previous value as if
+<a href="module-x2node-pointers-RecordElementPointer.html#getValue">getValue()</a>
+was called for the pointer before modifying the record.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="replaceValue"><span class="type-signature"></span>replaceValue(record, value)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Replace value of the property, at which the pointer points.
+
+<p>Note, that the method is not allowed on the root pointer. Also, not
+allowed for a dash array element pointer.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>record</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The record.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value to set. May not be <code>undefined</code> (use
+<a href="module-x2node-pointers-RecordElementPointer.html#removeValue">removeValue()</a>
+method to delete optional property values). A <code>null</code> is not
+allowed for nested object array and map elements. <strong>The method does
+not validate the value in any other way beyond that.</strong></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    <ul>
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If called on a root pointer,
+a dash array index pointer, or inappropriate value is provided.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2UsageError.html">module:x2node-common.X2UsageError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the property cannot be
+reached.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2DataError.html">module:x2node-common.X2DataError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        </ul>
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The previous value as if
+<a href="module-x2node-pointers-RecordElementPointer.html#getValue">getValue()</a>
+was called for the pointer before modifying the record.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="toString"><span class="type-signature"></span>toString()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get string representation of the pointer in the RFC 6901 format.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The pointer string (empty string for the root pointer).
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        <dl>
+                
+<hr>
+<dt>
+    <h4 class="name" id="~traceCallback"><span class="type-signature"></span>traceCallback(prefixPtr, value, prefixDepth)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Callback for the trace method.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>prefixPtr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-pointers-RecordElementPointer.html">module:x2node-pointers~RecordElementPointer</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The pointer
+representing the current pointer prefix. During a trace call, the callback
+is first called with the root pointer as the <code>prefixPtr</code> and
+last called with the actual pointer being traced (the leaf pointer).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The in the record value at the current
+<code>prefixPtr</code>.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>prefixDepth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Current prefix depth. For the left pointer it
+is zero, one for the immediate parent pointer, and so on.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            </dl>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Boyle Software, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

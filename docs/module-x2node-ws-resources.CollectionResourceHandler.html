@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>X2 Framework for Node.js Class: CollectionResourceHandler</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">X2 Framework for Node.js</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.X2DataError.html">x2node-common.X2DataError</a></li><li><a href="module-x2node-common.X2SyntaxError.html">x2node-common.X2SyntaxError</a></li><li><a href="module-x2node-common.X2UsageError.html">x2node-common.X2UsageError</a></li><li><a href="module-x2node-dbos.BasicDBDriver.html">x2node-dbos.BasicDBDriver</a></li><li><a href="module-x2node-dbos-DBOFactory.html">x2node-dbos~DBOFactory</a></li><li><a href="module-x2node-dbos-DeleteDBO.html">x2node-dbos~DeleteDBO</a></li><li><a href="module-x2node-dbos-FetchDBO.html">x2node-dbos~FetchDBO</a></li><li><a href="module-x2node-dbos-InsertDBO.html">x2node-dbos~InsertDBO</a></li><li><a href="module-x2node-dbos-Transaction.html">x2node-dbos~Transaction</a></li><li><a href="module-x2node-dbos-UpdateDBO.html">x2node-dbos~UpdateDBO</a></li><li><a href="module-x2node-patches-RecordPatch.html">x2node-patches~RecordPatch</a></li><li><a href="module-x2node-pointers-RecordElementPointer.html">x2node-pointers~RecordElementPointer</a></li><li><a href="module-x2node-records-LibraryConstructionContext.html">x2node-records~LibraryConstructionContext</a></li><li><a href="module-x2node-records-PropertiesContainer.html">x2node-records~PropertiesContainer</a></li><li><a href="module-x2node-records-PropertyDescriptor.html">x2node-records~PropertyDescriptor</a></li><li><a href="module-x2node-records-RecordTypeDescriptor.html">x2node-records~RecordTypeDescriptor</a></li><li><a href="module-x2node-records-RecordTypesLibrary.html">x2node-records~RecordTypesLibrary</a></li><li><a href="module-x2node-records-RecordTypesLibraryFactory.html">x2node-records~RecordTypesLibraryFactory</a></li><li><a href="module-x2node-rsparser-ResultSetParser.html">x2node-rsparser~ResultSetParser</a></li><li><a href="module-x2node-validators-ValidationContext.html">x2node-validators~ValidationContext</a></li><li><a href="module-x2node-validators-ValidationErrors.html">x2node-validators~ValidationErrors</a></li><li><a href="module-x2node-ws-auth-jwt-JWTAuthenticator.html">x2node-ws-auth-jwt~JWTAuthenticator</a></li><li><a href="module-x2node-ws-resources.CollectionResourceHandler.html">x2node-ws-resources.CollectionResourceHandler</a></li><li><a href="module-x2node-ws-resources.IndividualResourceHandler.html">x2node-ws-resources.IndividualResourceHandler</a></li><li><a href="module-x2node-ws-resources-ResourceHandlersFactory.html">x2node-ws-resources~ResourceHandlersFactory</a></li><li><a href="module-x2node-ws-resources-TransactionContext.html">x2node-ws-resources~TransactionContext</a></li><li><a href="module-x2node-ws-Application.html">x2node-ws~Application</a></li><li><a href="module-x2node-ws-ServiceCall.html">x2node-ws~ServiceCall</a></li><li><a href="module-x2node-ws-ServiceResponse.html">x2node-ws~ServiceResponse</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-dbos.PropertiesContainerWithDBOs.html">x2node-dbos.PropertiesContainerWithDBOs</a></li><li><a href="module-x2node-dbos.PropertyDescriptorWithDBOs.html">x2node-dbos.PropertyDescriptorWithDBOs</a></li><li><a href="module-x2node-dbos.RecordTypeDescriptorWithDBOs.html">x2node-dbos.RecordTypeDescriptorWithDBOs</a></li><li><a href="module-x2node-rsparser.PropertyDescriptorWithRSParser.html">x2node-rsparser.PropertyDescriptorWithRSParser</a></li><li><a href="module-x2node-validators.PropertyDescriptorWithValidators.html">x2node-validators.PropertyDescriptorWithValidators</a></li><li><a href="module-x2node-validators.RecordTypeDescriptorWithValidators.html">x2node-validators.RecordTypeDescriptorWithValidators</a></li><li><a href="module-x2node-ws-resources.HandlerExtension.html">x2node-ws-resources.HandlerExtension</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-ws-Application.html#event:shutdown">x2node-ws~Application#event:shutdown</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="modules_x2node-ws.Marshaller.html">modules:x2node-ws.Marshaller</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="external-Buffer.html">Buffer</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-EventEmitter.html">EventEmitter</a></li><li><a href="external-Url.html">Url</a></li><li><a href="http.external_IncomingMessage.html">IncomingMessage</a></li><li><a href="http.external_ServerResponse.html">ServerResponse</a></li><li><a href="net.external_Socket.html">Socket</a></li><li><a href="stream.external_Readable.html">Readable</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: CollectionResourceHandler</h1>
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-x2node-ws-resources.html">x2node-ws-resources</a>.</span>
+        
+        CollectionResourceHandler
+        </h2>
+        
+            <div class="class-description">Standard collection resource web wervice endpoint handler.</div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="CollectionResourceHandler"><span class="type-signature"></span>new CollectionResourceHandler(ds, dboFactory, rsrcPath [, options])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Create new handler.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos.DataSource.html">module:x2node-dbos.DataSource</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Data source.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dboFactory</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos-DBOFactory.html">module:x2node-dbos~DBOFactory</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">DBO factory.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rsrcPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Resource path.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Options.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="module-x2node-ws.Handler.html">module:x2node-ws.Handler</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li>module:x2node-ws~AbstractResourceHandler</li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Boyle Software, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

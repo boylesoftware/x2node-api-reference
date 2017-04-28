@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>X2 Framework for Node.js Class: LibraryConstructionContext</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">X2 Framework for Node.js</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.X2DataError.html">x2node-common.X2DataError</a></li><li><a href="module-x2node-common.X2SyntaxError.html">x2node-common.X2SyntaxError</a></li><li><a href="module-x2node-common.X2UsageError.html">x2node-common.X2UsageError</a></li><li><a href="module-x2node-dbos.BasicDBDriver.html">x2node-dbos.BasicDBDriver</a></li><li><a href="module-x2node-dbos-DBOFactory.html">x2node-dbos~DBOFactory</a></li><li><a href="module-x2node-dbos-DeleteDBO.html">x2node-dbos~DeleteDBO</a></li><li><a href="module-x2node-dbos-FetchDBO.html">x2node-dbos~FetchDBO</a></li><li><a href="module-x2node-dbos-InsertDBO.html">x2node-dbos~InsertDBO</a></li><li><a href="module-x2node-dbos-Transaction.html">x2node-dbos~Transaction</a></li><li><a href="module-x2node-dbos-UpdateDBO.html">x2node-dbos~UpdateDBO</a></li><li><a href="module-x2node-patches-RecordPatch.html">x2node-patches~RecordPatch</a></li><li><a href="module-x2node-pointers-RecordElementPointer.html">x2node-pointers~RecordElementPointer</a></li><li><a href="module-x2node-records-LibraryConstructionContext.html">x2node-records~LibraryConstructionContext</a></li><li><a href="module-x2node-records-PropertiesContainer.html">x2node-records~PropertiesContainer</a></li><li><a href="module-x2node-records-PropertyDescriptor.html">x2node-records~PropertyDescriptor</a></li><li><a href="module-x2node-records-RecordTypeDescriptor.html">x2node-records~RecordTypeDescriptor</a></li><li><a href="module-x2node-records-RecordTypesLibrary.html">x2node-records~RecordTypesLibrary</a></li><li><a href="module-x2node-records-RecordTypesLibraryFactory.html">x2node-records~RecordTypesLibraryFactory</a></li><li><a href="module-x2node-rsparser-ResultSetParser.html">x2node-rsparser~ResultSetParser</a></li><li><a href="module-x2node-validators-ValidationContext.html">x2node-validators~ValidationContext</a></li><li><a href="module-x2node-validators-ValidationErrors.html">x2node-validators~ValidationErrors</a></li><li><a href="module-x2node-ws-auth-jwt-JWTAuthenticator.html">x2node-ws-auth-jwt~JWTAuthenticator</a></li><li><a href="module-x2node-ws-resources.CollectionResourceHandler.html">x2node-ws-resources.CollectionResourceHandler</a></li><li><a href="module-x2node-ws-resources.IndividualResourceHandler.html">x2node-ws-resources.IndividualResourceHandler</a></li><li><a href="module-x2node-ws-resources-ResourceHandlersFactory.html">x2node-ws-resources~ResourceHandlersFactory</a></li><li><a href="module-x2node-ws-resources-TransactionContext.html">x2node-ws-resources~TransactionContext</a></li><li><a href="module-x2node-ws-Application.html">x2node-ws~Application</a></li><li><a href="module-x2node-ws-ServiceCall.html">x2node-ws~ServiceCall</a></li><li><a href="module-x2node-ws-ServiceResponse.html">x2node-ws~ServiceResponse</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-dbos.PropertiesContainerWithDBOs.html">x2node-dbos.PropertiesContainerWithDBOs</a></li><li><a href="module-x2node-dbos.PropertyDescriptorWithDBOs.html">x2node-dbos.PropertyDescriptorWithDBOs</a></li><li><a href="module-x2node-dbos.RecordTypeDescriptorWithDBOs.html">x2node-dbos.RecordTypeDescriptorWithDBOs</a></li><li><a href="module-x2node-rsparser.PropertyDescriptorWithRSParser.html">x2node-rsparser.PropertyDescriptorWithRSParser</a></li><li><a href="module-x2node-validators.PropertyDescriptorWithValidators.html">x2node-validators.PropertyDescriptorWithValidators</a></li><li><a href="module-x2node-validators.RecordTypeDescriptorWithValidators.html">x2node-validators.RecordTypeDescriptorWithValidators</a></li><li><a href="module-x2node-ws-resources.HandlerExtension.html">x2node-ws-resources.HandlerExtension</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-ws-Application.html#event:shutdown">x2node-ws~Application#event:shutdown</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="modules_x2node-ws.Marshaller.html">modules:x2node-ws.Marshaller</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="external-Buffer.html">Buffer</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-EventEmitter.html">EventEmitter</a></li><li><a href="external-Url.html">Url</a></li><li><a href="http.external_IncomingMessage.html">IncomingMessage</a></li><li><a href="http.external_ServerResponse.html">ServerResponse</a></li><li><a href="net.external_Socket.html">Socket</a></li><li><a href="stream.external_Readable.html">Readable</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: LibraryConstructionContext</h1>
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-x2node-records.html">x2node-records</a>~</span>
+        
+        LibraryConstructionContext
+        </h2>
+        
+            <div class="class-description">Context used during the building of a record types library by the factory. The
+context is used by the library extensions to perform work on completion of
+various descriptors.</div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="LibraryConstructionContext"><span class="type-signature"></span>new LibraryConstructionContext()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <strong>Note:</strong> The constructor is not accessible from the client
+code. Instances of the context are provided to the extensions by the
+factory.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Extensions.</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Iterable.&lt;<a href="module-x2node-records.Extension.html">module:x2node-records.Extension</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="addHiddenProperty"><span class="type-signature"></span>addHiddenProperty()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add hidden property to the current context properties container. The
+property descriptor will be available via the container's
+<code>getPropertyDesc()</code> method but will be not listed in the
+container's <code>allPropertyNames</code> list.
+
+<p>This method can only be called from a handler added to the context via
+the
+<a href="module-x2node-records-LibraryConstructionContext.html#onContainerComplete">onContainerComplete()</a>
+method.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addRecordType"><span class="type-signature"></span>addRecordType(recordTypeName, recordTypeDef)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add record type to the record types library.
+
+<p>This method can only be called from a handler added to the context via
+the
+<a href="module-x2node-records-LibraryConstructionContext.html#onLibraryComplete">onLibraryComplete()</a>
+method.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Symbol</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Record type name.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeDef</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Record type definition.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    
+            
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If record type with the same
+name already exists of if called from a wrong place in the extension.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2UsageError.html">module:x2node-common.X2UsageError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+
+        
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="createPropertiesContainer"><span class="type-signature"></span>createPropertiesContainer(containerPropDesc, containerDef)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Create nested properties container.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>containerPropDesc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-records-PropertyDescriptor.html">module:x2node-records~PropertyDescriptor</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Descriptor of the container property in the parent container.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>containerDef</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Container definition.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The new container.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-x2node-records-PropertiesContainer.html">module:x2node-records~PropertiesContainer</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="onContainerComplete"><span class="type-signature"></span>onContainerComplete(handler)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Perform work upon properties container (either nested object or record
+type descriptor) completion. The handlers are called right after all
+properties are added to the container. If called from the extension's
+<a href="module-x2node-records.Extension.html#extendPropertyDescriptor">extendPropertyDescriptor()</a>
+or
+<a href="module-x2node-records.Extension.html#extendPropertiesContainer">extendPropertiesContainer()</a>
+function, the handler is called only when the currently being built
+container is complete. If called from the extension's
+<a href="module-x2node-records.Extension.html#extendRecordTypesLibrary">extendRecordTypesLibrary()</a>
+function, an error is thrown.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The handler function that receives the
+properties container as its only argument.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="onLibraryComplete"><span class="type-signature"></span>onLibraryComplete(handler)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Perform work upon record types library completion. The handlers are called
+right after all record types are added to the library but before the
+registered library validators are called.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The handler function that receives the record
+type library as its only argument.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="onLibraryValidation"><span class="type-signature"></span>onLibraryValidation(validator)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Register validator invoked after the library completion.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>validator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The validator function that receives the
+complete record types library as its only argument.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Boyle Software, Inc.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
