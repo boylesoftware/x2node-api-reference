@@ -552,6 +552,78 @@ property descriptor is made available to the generator function as
         
             
 <hr>
+<dt class="name" id="indexColumn">
+    <h4 id="indexColumn"><span class="type-signature">&lt;readonly> </span>indexColumn<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        For an array property, the name of the database column that contains the
+element indexes, or nothing if the array does not utilize any.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
 <dt class="name" id="keyColumn">
     <h4 id="keyColumn"><span class="type-signature">&lt;readonly> </span>keyColumn<span class="type-signature"> :string</span></h4>
 
@@ -1003,9 +1075,10 @@ if the id value is unique table-wide.
 
     
     <div class="description">
-        Tell if this is a calculated value property, which includes properties
-with a <code>valueExpr</code> attribute in the definition and aggregate
-properties.
+        Tell if this is an aggregate property. If a property is an aggregate,
+<code>isCalculated()</code> also returns <code>true</code> and
+<code>aggregatedPropPath</code> and <code>aggregateFunc</code> descriptor
+properties are made available as well.
     </div>
     
 
@@ -1099,7 +1172,7 @@ properties.
             
 <hr>
 <dt>
-    <h4 class="name" id="isAggregate"><span class="type-signature"></span>isAggregate()</h4>
+    <h4 class="name" id="isCalculated"><span class="type-signature"></span>isCalculated()</h4>
     
     
 </dt>
@@ -1107,10 +1180,9 @@ properties.
 
     
     <div class="description">
-        Tell if this is an aggregate property. If a property is an aggregate,
-<code>isCalculated()</code> also returns <code>true</code> and
-<code>aggregatedPropPath</code> and <code>aggregateFunc</code> descriptor
-properties are made available as well.
+        Tell if this is a calculated value property, which includes properties
+with a <code>valueExpr</code> attribute in the definition and aggregate
+properties.
     </div>
     
 
