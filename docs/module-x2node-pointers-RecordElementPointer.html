@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+					<li><a href="module-x2node-acls.html">x2node-acls</a></li><li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
 				</ul>
 			</li>
 			
@@ -585,6 +585,78 @@ number or a dash ("-") and for a map element&mdash;the map key string.
 |
 
 <span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="parent">
+    <h4 id="parent"><span class="type-signature">&lt;readonly, nullable> </span>parent<span class="type-signature"> :<a href="module-x2node-pointers-RecordElementPointer.html">module:x2node-pointers~RecordElementPointer</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Pointer for the parent record element, or <code>null</code> if root
+pointer.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-pointers-RecordElementPointer.html">module:x2node-pointers~RecordElementPointer</a></span>
 
 
 
@@ -1606,7 +1678,8 @@ pointer.</td>
 
     
     <div class="description">
-        Tell if the pointer is the root pointer.
+        Tell if the pointer is the root pointer. Equivalent for checking if
+<code>parent</code> is <code>null</code>.
     </div>
     
 
@@ -2350,8 +2423,8 @@ last called with the actual pointer being traced (the leaf pointer).</td>
 
             
 
-            <td class="description last">The in the record value at the current
-<code>prefixPtr</code>.</td>
+            <td class="description last">The value at the current <code>prefixPtr</code> in the
+record.</td>
         </tr>
 
     
@@ -2375,7 +2448,7 @@ last called with the actual pointer being traced (the leaf pointer).</td>
 
             
 
-            <td class="description last">Current prefix depth. For the left pointer it
+            <td class="description last">Current prefix depth. For the leaf pointer it
 is zero, one for the immediate parent pointer, and so on.</td>
         </tr>
 
