@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>X2 Framework for Node.js Interface: RecordCollectionsTracker</title>
+	<title>X2 Framework for Node.js Interface: RecordCollectionsMonitor</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-dbos-monitor-dbtable.html">x2node-dbos-monitor-dbtable</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
 				</ul>
 			</li>
 			
@@ -61,7 +61,7 @@
 			<li class="dropdown">
 				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-dbos.RecordCollectionsTracker.html">x2node-dbos.RecordCollectionsTracker</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="module-x2node-ws.Marshaller.html">x2node-ws.Marshaller</a></li>
+					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-dbos.RecordCollectionsMonitor.html">x2node-dbos.RecordCollectionsMonitor</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="module-x2node-ws.Marshaller.html">x2node-ws.Marshaller</a></li>
 				</ul>
 			</li>
 			
@@ -100,7 +100,7 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Interface: RecordCollectionsTracker</h1>
+	<h1 class="page-title">Interface: RecordCollectionsMonitor</h1>
 <section>
 
 <header>
@@ -108,7 +108,7 @@
         <h2>
             <span class="ancestors"><a href="module-x2node-dbos.html">x2node-dbos</a>.</span>
         
-        RecordCollectionsTracker
+        RecordCollectionsMonitor
         </h2>
         
     
@@ -119,8 +119,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Interface for components that get notified by the DBOs when records of any
-record type are modified.</div>
+            <div class="description">Interface for components that monitor updates to record collections of each
+record type as a whole.</div>
         
 
         
@@ -186,7 +186,7 @@ record type are modified.</div>
             
 <hr>
 <dt>
-    <h4 class="name" id="recordsUpdated"><span class="type-signature"></span>recordsUpdated(ctx, recordTypeNames)</h4>
+    <h4 class="name" id="collectionsUpdated"><span class="type-signature"></span>collectionsUpdated(ctx, recordTypeNames)</h4>
     
     
 </dt>
@@ -194,7 +194,7 @@ record type are modified.</div>
 
     
     <div class="description">
-        Called the DBOs from within the transaction when records of the specified
+        Called by the DBOs from within the transactions when records of the given
 record types are modified. The method is called just before the transaction is
 committed.
     </div>
@@ -351,6 +351,239 @@ ignored and the transaction is committed immediately.
     <dd>
         
 <span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getCollectionsVersion"><span class="type-signature"></span>getCollectionsVersion(tx, recordTypeNames [, lockType])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get record collection version information for the specified record types.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos-Transaction.html">module:x2node-dbos~Transaction</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The transaction.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Set.&lt;string></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Names of the record types to include.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lockType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If provided, the collections are locked until the
+end of the transaction. The value can be either "shared" or "exclusive".</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Promise of the result object. The result object
+includes two properties: <code>modifiedOn</code>, which is a <code>Date</code>
+representing the last modification timestamp of the records collection among
+the requested ones that was modified most recently, and <code>version</code>,
+which is a number that is a sum of all requested record collection versions.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Object></span>
 
 
 

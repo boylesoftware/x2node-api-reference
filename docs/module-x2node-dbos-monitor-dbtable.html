@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>X2 Framework for Node.js Mixin: PropertyDescriptorWithValidators</title>
+	<title>X2 Framework for Node.js Module: x2node-dbos-monitor-dbtable</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -100,17 +100,10 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Mixin: PropertyDescriptorWithValidators</h1>
+	<h1 class="page-title">Module: x2node-dbos-monitor-dbtable</h1>
 <section>
 
 <header>
-    
-        <h2>
-            <span class="ancestors"><a href="module-x2node-validators.html">x2node-validators</a>.</span>
-        
-        PropertyDescriptorWithValidators
-        </h2>
-        
     
 </header>
 
@@ -119,9 +112,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Validators module specific
-<a href="module-x2node-records-PropertyDescriptor.html">PropertyDescriptor</a>
-extension.</div>
+            <div class="description">Implementation of the record collections monitor for the DBOs module that uses
+a database table to store current record collections version information.</div>
         
 
         
@@ -171,7 +163,11 @@ extension.</div>
     
 
     
+        <h3 class="subsection-title">Requires</h3>
 
+        <ul>
+            <li><a href="module-x2node-common.html">module:x2node-common</a></li>
+        </ul>
     
 
     
@@ -179,184 +175,109 @@ extension.</div>
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
-<dt class="name" id="title">
-    <h4 id="title"><span class="type-signature">&lt;readonly> </span>title<span class="type-signature"> :string|Object.&lt;string, string></span></h4>
-
+<dt>
+    <h4 class="name" id=".assignTo"><span class="type-signature">&lt;static> </span>assignTo(dboFactory, ds)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
-        Property title.
+        Assign the monitor to the specified DBO factory and initialize it.
     </div>
     
 
     
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Object.&lt;string, string></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
     
-
     
+        <h5>Parameters:</h5>
+        
 
-    
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
+        <th>Type</th>
 
         
-            
-<hr>
-<dt class="name" id="validationErrorMessages">
-    <h4 id="validationErrorMessages"><span class="type-signature">&lt;readonly> </span>validationErrorMessages<span class="type-signature"> :Object.&lt;string, (string|Object.&lt;string, string>)></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Context validation error messages for the property (and nested properties
-if the property is a nested object). The keys are message ids, the values
-are either message template strings, or objects with language codes as
-keys and localized message templates strings as values.
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Object.&lt;string, (string|Object.&lt;string, string>)></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
 
         
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
             
-<hr>
-<dt class="name" id="validators">
-    <h4 id="validators"><span class="type-signature">&lt;readonly, nullable> </span>validators<span class="type-signature"> :Object.&lt;string, Array.&lt;module:x2node-validators.curriedValidator>></span></h4>
+                <td class="name"><code>dboFactory</code></td>
+            
 
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Property validators/normalizers or <code>null</code> if no validators. The
-keys are validation sets, including "*" for the validators that always
-run, and the values are the functions.
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
+            <td class="type">
+            
                 
-<span class="param-type">Object.&lt;string, Array.&lt;module:x2node-validators.curriedValidator>></span>
+<span class="param-type"><a href="module-x2node-dbos-DBOFactory.html">module:x2node-dbos~DBOFactory</a></span>
 
 
 
-            </li>
-        </ul>
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The DBO factory, to which to
+to assign the monitor.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos.DataSource.html">module:x2node-dbos.DataSource</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Database connection data source used
+by the monitor to initialize the record collections version information table.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -398,13 +319,48 @@ run, and the values are the functions.
 	
 </dl>
 
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The monitor assigned to
+the DBO factory.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-x2node-dbos.RecordCollectionsMonitor.html">module:x2node-dbos.RecordCollectionsMonitor</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
 
     
 </dd>
 
         </dl>
-    
-
     
 
     

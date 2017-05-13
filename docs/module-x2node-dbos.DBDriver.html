@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-dbos-monitor-dbtable.html">x2node-dbos-monitor-dbtable</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
 				</ul>
 			</li>
 			
@@ -61,7 +61,7 @@
 			<li class="dropdown">
 				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-dbos.RecordCollectionsTracker.html">x2node-dbos.RecordCollectionsTracker</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="module-x2node-ws.Marshaller.html">x2node-ws.Marshaller</a></li>
+					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-dbos.RecordCollectionsMonitor.html">x2node-dbos.RecordCollectionsMonitor</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="module-x2node-ws.Marshaller.html">x2node-ws.Marshaller</a></li>
 				</ul>
 			</li>
 			
@@ -1639,6 +1639,258 @@ Boolean operation), it needs to be enclosed in parenthesis.</td>
             
 <hr>
 <dt>
+    <h4 class="name" id="buildUpsert"><span class="type-signature"></span>buildUpsert(tableName, insertColumns, insertValues, uniqueColumn, sets)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Build a SQL statement that performs an "upsert" operation.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tableName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the table for the update/insert.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>insertColumns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Comma-separated list of columns for the
+<code>INSERT</code> statement.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>insertValues</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Comma-separated list of values for the
+<code>INSERT</code> statement's <code>VALUES</code> clause.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>uniqueColumn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the column that has the unique constraint
+that is expected to be violated on the insert attempt.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sets</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Comma-separated list of column/value assignments for the
+<code>UPDATE</code> statement's <code>SET</code> clause.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The resulting SQL statement.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="castToString"><span class="type-signature"></span>castToString(expr)</h4>
     
     
@@ -2085,7 +2337,7 @@ non-<code>NULL</code>.
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success.</td>
         </tr>
 
@@ -2110,7 +2362,7 @@ success.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 failure. The function receives a single argument with the error object.</td>
         </tr>
 
@@ -2313,7 +2565,7 @@ failure. The function receives a single argument with the error object.</td>
 
             
 
-            <td class="description last">Fucntion that gets called when the
+            <td class="description last">Function that gets called when the
 connection is acquired. The connection is passed to it as the only argument.</td>
         </tr>
 
@@ -2338,8 +2590,317 @@ connection is acquired. The connection is passed to it as the only argument.</td
 
             
 
-            <td class="description last">Fucntion that gets called when connection
+            <td class="description last">Function that gets called when connection
 could not be acquired. The error is passed to is as the only argument.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="createVersionTableIfNotExists"><span class="type-signature"></span>createVersionTableIfNotExists(connection, tableName, handler)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Create special table used to track versions if it does not exist yet. The
+table has three columns: <code>name</code> (varchar 64, primary key),
+<code>modified_on</code> (timestamp) and <code>version</code>
+(unsigned integer).
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>connection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Driver-specific database connection object.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tableName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Table name.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The operation result handler.
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>onSuccess</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function that gets called upon operation
+success.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function that gets called upon operation
+failure. The function receives a single argument with the error object.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function that gets called before the method
+sends a SQL command to the database. The command SQL is passed to the function
+as its only argument.</td>
         </tr>
 
     
@@ -2591,7 +3152,7 @@ could not be acquired. The error is passed to is as the only argument.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success. If <code>idColumn</code> argument is provided, the function gets the
 inserted record id as its only argument.</td>
         </tr>
@@ -2617,7 +3178,7 @@ inserted record id as its only argument.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 failure. The function receives a single argument with the error object.</td>
         </tr>
 
@@ -2890,7 +3451,7 @@ statement may be returning a result set.
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success.</td>
         </tr>
 
@@ -3227,7 +3788,7 @@ statement is intended to modify data (such as <code>UPDATE</code> and
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success. The function gets the number of affected rows as its only argument.</td>
         </tr>
 
@@ -3252,7 +3813,7 @@ success. The function gets the number of affected rows as its only argument.</td
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 failure. The function receives a single argument with the error object.</td>
         </tr>
 
@@ -3503,7 +4064,7 @@ failure. The function receives a single argument with the error object.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success. The function receives the variable value as its only argument. If the
 variable is not set, <code>undefined</code> is passed to the function.</td>
         </tr>
@@ -3529,7 +4090,7 @@ variable is not set, <code>undefined</code> is passed to the function.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 failure. The function receives a single argument with the error object.</td>
         </tr>
 
@@ -4982,7 +5543,7 @@ release after a database error.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success.</td>
         </tr>
 
@@ -5007,7 +5568,7 @@ success.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 failure. The function receives a single argument with the error object.</td>
         </tr>
 
@@ -5654,7 +6215,7 @@ placeholder in the place of the select list.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success. The function receives the number of ids loaded into the anchor table
 as its only argument.</td>
         </tr>
@@ -5975,7 +6536,7 @@ as its only argument.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success.</td>
         </tr>
 
@@ -6000,7 +6561,7 @@ success.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 failure. The function receives a single argument with the error object.</td>
         </tr>
 
@@ -6359,7 +6920,7 @@ if the value cannot be represented in SQL (includes <code>undefined</code>,
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 success.</td>
         </tr>
 
@@ -6384,7 +6945,7 @@ success.</td>
 
             
 
-            <td class="description last">Fucntion that gets called upon operation
+            <td class="description last">Function that gets called upon operation
 failure. The function receives a single argument with the error object.</td>
         </tr>
 
@@ -7606,6 +8167,360 @@ case.
 
 
         
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="updateVersionTable"><span class="type-signature"></span>updateVersionTable(connection, tableName, itemNames, modificationTimestamp, handler)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Update versions tracking table.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>connection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Driver-specific database connection object.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tableName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Table name.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>itemNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Names of the items to update.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>modificationTimestamp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Modification timestamp.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The operation result handler.
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>onSuccess</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function that gets called upon operation
+success.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function that gets called upon operation
+failure. The function receives a single argument with the error object.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function that gets called before the method
+sends a SQL command to the database. The command SQL is passed to the function
+as its only argument.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 </dd>

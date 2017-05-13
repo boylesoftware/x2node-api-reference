@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
+					<li><a href="module-x2node-common.html">x2node-common</a></li><li><a href="module-x2node-dbos.html">x2node-dbos</a></li><li><a href="module-x2node-dbos-monitor-dbtable.html">x2node-dbos-monitor-dbtable</a></li><li><a href="module-x2node-patches.html">x2node-patches</a></li><li><a href="module-x2node-pointers.html">x2node-pointers</a></li><li><a href="module-x2node-records.html">x2node-records</a></li><li><a href="module-x2node-rsparser.html">x2node-rsparser</a></li><li><a href="module-x2node-validators.html">x2node-validators</a></li><li><a href="module-x2node-ws.html">x2node-ws</a></li><li><a href="module-x2node-ws-auth-jwt.html">x2node-ws-auth-jwt</a></li><li><a href="module-x2node-ws-resources.html">x2node-ws-resources</a></li>
 				</ul>
 			</li>
 			
@@ -61,7 +61,7 @@
 			<li class="dropdown">
 				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-dbos.RecordCollectionsTracker.html">x2node-dbos.RecordCollectionsTracker</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="module-x2node-ws.Marshaller.html">x2node-ws.Marshaller</a></li>
+					<li><a href="module-x2node-common.Actor.html">x2node-common.Actor</a></li><li><a href="module-x2node-dbos.DataSource.html">x2node-dbos.DataSource</a></li><li><a href="module-x2node-dbos.DBDriver.html">x2node-dbos.DBDriver</a></li><li><a href="module-x2node-dbos.RecordCollectionsMonitor.html">x2node-dbos.RecordCollectionsMonitor</a></li><li><a href="module-x2node-patches.RecordPatchHandlers.html">x2node-patches.RecordPatchHandlers</a></li><li><a href="module-x2node-records.Extension.html">x2node-records.Extension</a></li><li><a href="module-x2node-ws.ActorsRegistry.html">x2node-ws.ActorsRegistry</a></li><li><a href="module-x2node-ws.Authenticator.html">x2node-ws.Authenticator</a></li><li><a href="module-x2node-ws.Authorizer.html">x2node-ws.Authorizer</a></li><li><a href="module-x2node-ws.Handler.html">x2node-ws.Handler</a></li><li><a href="module-x2node-ws.Marshaller.html">x2node-ws.Marshaller</a></li>
 				</ul>
 			</li>
 			
@@ -294,6 +294,148 @@ library to build DBOs against.</td>
         <dl>
             
 <hr>
+<dt class="name" id="dbDriver">
+    <h4 id="dbDriver"><span class="type-signature">&lt;readonly> </span>dbDriver<span class="type-signature"> :<a href="module-x2node-dbos.DBDriver.html">module:x2node-dbos.DBDriver</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The database driver.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-dbos.DBDriver.html">module:x2node-dbos.DBDriver</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="recordCollectionsMonitor">
+    <h4 id="recordCollectionsMonitor"><span class="type-signature">&lt;readonly> </span>recordCollectionsMonitor<span class="type-signature"> :<a href="module-x2node-dbos.RecordCollectionsMonitor.html">module:x2node-dbos.RecordCollectionsMonitor</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Record collections monitor assigned to the factory.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-dbos.RecordCollectionsMonitor.html">module:x2node-dbos.RecordCollectionsMonitor</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
 <dt class="name" id="recordTypes">
     <h4 id="recordTypes"><span class="type-signature">&lt;readonly> </span>recordTypes<span class="type-signature"> :<a href="module-x2node-records-RecordTypesLibrary.html">module:x2node-records~RecordTypesLibrary</a></span></h4>
 
@@ -509,161 +651,6 @@ with the DBO factory.
     <dd>
         
 <span class="param-type"><a href="module-x2node-dbos.DataSource.html">module:x2node-dbos.DataSource</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="addRecordCollectionsTracker"><span class="type-signature"></span>addRecordCollectionsTracker(tracker)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Add record collection updates tracker to the factory. Every DBO created by
-the factory will report record collection updates to all the trackers
-registered using this method. The trackers will be called in the order
-they were added to the factory.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>tracker</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="module-x2node-dbos.RecordCollectionsTracker.html">module:x2node-dbos.RecordCollectionsTracker</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The tracker.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This factory.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="module-x2node-dbos-DBOFactory.html">module:x2node-dbos~DBOFactory</a></span>
 
 
 
@@ -1999,6 +1986,159 @@ driver.</td>
     <dd>
         
 <span class="param-type"><a href="module-x2node-dbos-Transaction.html">module:x2node-dbos~Transaction</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setRecordCollectionsMonitor"><span class="type-signature"></span>setRecordCollectionsMonitor(monitor)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Assign record collections monitor to the factory. Every DBO created by the
+factory will report record collection updates to this monitor.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>monitor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos.RecordCollectionsMonitor.html">module:x2node-dbos.RecordCollectionsMonitor</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The monitor.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    This factory.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-x2node-dbos-DBOFactory.html">module:x2node-dbos~DBOFactory</a></span>
 
 
 
