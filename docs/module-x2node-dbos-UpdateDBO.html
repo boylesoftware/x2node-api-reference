@@ -1124,7 +1124,7 @@ ids <code>SELECT</code> query.</td>
             
 <hr>
 <dt>
-    <h4 class="name" id="execute"><span class="type-signature"></span>execute(txOrCon, actor, recordValidator [, filterParams])</h4>
+    <h4 class="name" id="execute"><span class="type-signature"></span>execute(txOrCon, actor, recordValidators [, filterParams])</h4>
     
     
 </dt>
@@ -1241,12 +1241,15 @@ the operation execution.</td>
 
         <tr>
             
-                <td class="name"><code>recordValidator</code></td>
+                <td class="name"><code>recordValidators</code></td>
             
 
             <td class="type">
             
                 
+<span class="param-type"><a href="module-x2node-dbos-UpdateDBO.html#~RecordValidators">module:x2node-dbos~UpdateDBO~RecordValidators</a></span>
+|
+
 <span class="param-type"><a href="module-x2node-dbos-UpdateDBO.html#~recordValidator">module:x2node-dbos~UpdateDBO~recordValidator</a></span>
 
 
@@ -1268,7 +1271,8 @@ the operation execution.</td>
 
             
 
-            <td class="description last">Record validation/normalization function, or <code>null</code> if none.</td>
+            <td class="description last">Record validation/normalization functions, or <code>null</code> if none If
+function is provided, it is assumed as "afterPatch" function.</td>
         </tr>
 
     
@@ -1595,6 +1599,172 @@ promise (including nothing), the record save continues.
 
 
         
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="~RecordValidators">
+    <h4 id="~RecordValidators">RecordValidators</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Record validator functions.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>beforePatch</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos-UpdateDBO.html#~recordValidator">module:x2node-dbos~UpdateDBO~recordValidator</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Validator function invoked before applying the patch.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>afterPatch</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos-UpdateDBO.html#~recordValidator">module:x2node-dbos~UpdateDBO~recordValidator</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Validator function invoked after applying the patch.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
 
     
 </dd>
