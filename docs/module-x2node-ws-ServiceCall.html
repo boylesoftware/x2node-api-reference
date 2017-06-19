@@ -125,7 +125,7 @@ that participate in the call handling (such as call handlers).</div>
         
 <hr>
 <dt>
-    <h4 class="name" id="ServiceCall"><span class="type-signature"></span>new ServiceCall(httpRequest, httpResponse)</h4>
+    <h4 class="name" id="ServiceCall"><span class="type-signature"></span>new ServiceCall(apiVersion, httpRequest, options)</h4>
     
     
 </dt>
@@ -169,6 +169,30 @@ code. Instances are created internally by the framework.
 
         <tr>
             
+                <td class="name"><code>apiVersion</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Application API version.</td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>httpRequest</code></td>
             
 
@@ -193,13 +217,13 @@ code. Instances are created internally by the framework.
 
         <tr>
             
-                <td class="name"><code>httpResponse</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="http.external_ServerResponse.html">http.external:ServerResponse</a></span>
+<span class="param-type"><a href="module-x2node-ws.html#~ApplicationOptions">module:x2node-ws~ApplicationOptions</a></span>
 
 
 
@@ -210,7 +234,8 @@ code. Instances are created internally by the framework.
 
             
 
-            <td class="description last">HTTP response.</td>
+            <td class="description last">Application
+configuration options.</td>
         </tr>
 
     
@@ -312,6 +337,150 @@ unauthenticated.
             <li>
                 
 <span class="param-type"><a href="module-x2node-common.Actor.html">module:x2node-common.Actor</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="apiVersion">
+    <h4 id="apiVersion"><span class="type-signature">&lt;readonly> </span>apiVersion<span class="type-signature"> :string</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Application API version.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="appOptions">
+    <h4 id="appOptions"><span class="type-signature">&lt;readonly> </span>appOptions<span class="type-signature"> :<a href="module-x2node-ws.html#~ApplicationOptions">module:x2node-ws~ApplicationOptions</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Application configuration options originally passed to the module's
+<a href="module-x2node-ws.html#.createApplication">createApplication()</a> function,
+or an empty object if none were passed.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="module-x2node-ws.html#~ApplicationOptions">module:x2node-ws~ApplicationOptions</a></span>
 
 
 

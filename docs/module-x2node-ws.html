@@ -731,6 +731,34 @@ configuration options.</td>
 
         <tr>
             
+                <td class="name"><code>apiVersion</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Version of the API exposed by the application.
+If not specified, <code>NODE_ENV</code> environment variable is examined. If
+its value is "development", the version is set to the current timestamp so
+that it changes each time the application is restarted. Otherwise, the version
+is read from the main module's <code>package.json</code>.</td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>connectionIdleTimeout</code></td>
             
 
