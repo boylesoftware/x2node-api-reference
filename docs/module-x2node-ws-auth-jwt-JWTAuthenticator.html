@@ -123,7 +123,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="JWTAuthenticator"><span class="type-signature"></span>new JWTAuthenticator(actorsRegistry, clientId, clientSecret)</h4>
+    <h4 class="name" id="JWTAuthenticator"><span class="type-signature"></span>new JWTAuthenticator(actorsRegistry, secretOrKey [, claimsTest] [, actorHandleClaim])</h4>
     
     
 </dt>
@@ -154,6 +154,8 @@
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
         
 
@@ -180,6 +182,14 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -190,31 +200,7 @@
 
         <tr>
             
-                <td class="name"><code>clientId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Client id.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>clientSecret</code></td>
+                <td class="name"><code>secretOrKey</code></td>
             
 
             <td class="type">
@@ -224,6 +210,9 @@
 |
 
 <span class="param-type"><a href="external-Buffer.html">external:Buffer</a></span>
+|
+
+<span class="param-type">function</span>
 
 
 
@@ -231,10 +220,97 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">Client secret key.</td>
+            <td class="description last">Secret or public
+key used to verify the JWT signature. If function, the function receives
+decoded JWT object as its only argument and returns the key (string or
+buffer) or a promise of it.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>claimsTest</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Optional additional tests for the JWT claims
+set. Each object element has the name of the tested claim (e.g. "iss",
+"aud", "hd", etc.) and the value can be a function, which gets the claim
+value as its first argument and the whole claims set object as the second
+argument and returns <code>true</code> if valid and <code>false</code> if
+invalid, a <code>RegExp</code> object for a valid claim value, or a value
+(string, number, etc.) to perform simple equivalency test. Note, that
+token "nbf" and "exp" are always automatically tested.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>actorHandleClaim</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Claim to use as the actor handle in the
+actor registry lookup. By default, "sub" claim is used.</td>
         </tr>
 
     
