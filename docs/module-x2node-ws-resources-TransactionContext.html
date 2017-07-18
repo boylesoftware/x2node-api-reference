@@ -1481,6 +1481,719 @@ of the current transaction phase.
             
 <hr>
 <dt>
+    <h4 class="name" id="rejectIfExists"><span class="type-signature"></span>rejectIfExists(recordTypeName, filterSpec, httpStatusCode, errorMessage)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Convenience shortcut for checking if records of a given record type
+matching the specified filter exist and if so, return a promise rejected
+with an error HTTP response.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the record type to check.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filterSpec</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Records filter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>httpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">HTTP response status code for the error
+response.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Message for the error response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Promise that gets
+rejected with a service response if matching records exist. If matching
+records do not exist, the promise is fulfulled with nothing.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="module-x2node-ws-ServiceResponse.html">module:x2node-ws~ServiceResponse</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="rejectIfNotExactNum"><span class="type-signature"></span>rejectIfNotExactNum(recordTypeName, filterSpec, expectedNum, httpStatusCode, errorMessage)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Convenience shortcut for checking if exact number of records of a given
+record type matching the specified filter exists and if not, return a
+promise rejected with an error HTTP response. The existing records are
+also locked by the method in shared mode for the transaction.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the record type to check.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filterSpec</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Records filter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>expectedNum</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Expected number of existing records.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>httpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">HTTP response status code for the error
+response.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Message for the error response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Promise that gets
+rejected with a service response if number of existing matching records
+does not match. If it matches, the promise is fulfulled with nothing.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="module-x2node-ws-ServiceResponse.html">module:x2node-ws~ServiceResponse</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="rejectIfNotExists"><span class="type-signature"></span>rejectIfNotExists(recordTypeName, filterSpec, httpStatusCode, errorMessage)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Convenience shortcut for checking if records of a given record type
+matching the specified filter do not exist and if so, return a promise
+rejected with an error HTTP response. If records do exist, they are also
+locked by the method in shared mode for the transaction.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the record type to check.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filterSpec</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Records filter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>httpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">HTTP response status code for the error
+response.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Message for the error response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Promise that gets
+rejected with a service response if no matching records exist. If matching
+records do exist, the promise is fulfulled with nothing.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="module-x2node-ws-ServiceResponse.html">module:x2node-ws~ServiceResponse</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="update"><span class="type-signature"></span>update(recordTypeName, patch, filterSpec [, passThrough])</h4>
     
     
@@ -1801,7 +2514,7 @@ either the update result object or the pass through object.
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a>
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
