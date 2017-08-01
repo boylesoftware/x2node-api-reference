@@ -1,6 +1,11 @@
 #!/bin/sh
 
-MODULES=`find .. -mindepth 1 -maxdepth 1 -type d -name 'x2node-*'`
+MODULES=""
+for m in `find .. -mindepth 1 -maxdepth 1 -type d -name 'x2node-*'`; do
+    if [ -f $m/package.json -a -z "$(grep -s '"private": true' $m/package.json)" ]; then
+        MODULES="$MODULES $m";
+    fi
+done
 
 rm -rf ./docs/*
 
