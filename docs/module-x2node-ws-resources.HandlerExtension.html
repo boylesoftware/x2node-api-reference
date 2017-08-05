@@ -3004,7 +3004,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="prepareCreate"><span class="type-signature"></span>prepareCreate(txCtx)</h4>
+    <h4 class="name" id="prepareCreate"><span class="type-signature"></span>prepareCreate(txCtx, recordTmpl)</h4>
     
     
 </dt>
@@ -3012,7 +3012,7 @@
 
     
     <div class="description">
-        After the record is validated.
+        After the record template is validated.
     </div>
     
 
@@ -3054,6 +3054,210 @@
             
                 
 <span class="param-type"><a href="module-x2node-ws-resources.html#.CreateTransactionContext">module:x2node-ws-resources.CreateTransactionContext</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTmpl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Nothing, or a promise, which can be rejected to abort
+the action and return the rejection object as the handler response.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+|
+
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="prepareCreateSpec"><span class="type-signature"></span>prepareCreateSpec(txCtx, recordTmpl)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Before the record template is validated.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>txCtx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-ws-resources.html#.CreateTransactionContext">module:x2node-ws-resources.CreateTransactionContext</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTmpl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
 
 
 
@@ -3772,6 +3976,182 @@ the action and return the rejection object as the handler response.
     
 </dd>
 
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="prepareUpdateSpec"><span class="type-signature"></span>prepareUpdateSpec(txCtx, patchSpec)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>txCtx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-ws-resources.html#.UpdateTransactionContext">module:x2node-ws-resources.UpdateTransactionContext</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>patchSpec</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Nothing, or a promise, which can be rejected to abort
+the action and return the rejection object as the handler response.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+|
+
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
         </dl>
     
 
@@ -3824,7 +4204,7 @@ the action and return the rejection object as the handler response.
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
