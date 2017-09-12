@@ -124,7 +124,7 @@ environment and report errors.</div>
         
 <hr>
 <dt>
-    <h4 class="name" id="ValidationContext"><span class="type-signature"></span>new ValidationContext(recordTypes, recordTypeDesc, messageResolver)</h4>
+    <h4 class="name" id="ValidationContext"><span class="type-signature"></span>new ValidationContext(recordTypes, recordTypeDesc, messageResolver, validationSets)</h4>
     
     
 </dt>
@@ -238,6 +238,30 @@ type descriptor.</td>
 
             <td class="description last">Message
 resolver for the validation error messages.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>validationSets</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Set.&lt;string></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Validation sets.</td>
         </tr>
 
     
@@ -1291,6 +1315,159 @@ pointer.</td>
             
 <div class="param-desc">
     <code>true</code> if has errors.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isValidationSet"><span class="type-signature"></span>isValidationSet(setId)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the specified validation set active. Note that default validation
+set (set id "*") is always active.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>setId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Set id.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if the set is active.
 </div>
 
 
