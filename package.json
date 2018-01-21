@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/boylesoftware/x2node-api-reference",
   "devDependencies": {
-    "ink-docstrap": "^1.3.0",
-    "jsdoc": "^3.5.4"
+    "ink-docstrap": "^1.3.2",
+    "jsdoc": "^3.5.5"
   }
 }
