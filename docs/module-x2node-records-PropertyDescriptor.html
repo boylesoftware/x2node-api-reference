@@ -1390,6 +1390,222 @@ a shortcut for <code>nestedProperties.subtypes</code>.
             
 <hr>
 <dt>
+    <h4 class="name" id="isCalculated"><span class="type-signature"></span>isCalculated()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if this is a calculated value property. Calculated properties are
+similar to view properties. They are not stored in the record persistent
+storage and their values are calculated on the fly based on other record
+property values. Calculated properties can be included when the record is
+read from the persistent storage and are ignored when the record is saved
+into the persistent storage. This flag is used in extensions and is not
+used in the core record types library implementation directly. Unless
+overridden in an extension, the method returns <code>false</code> for all
+properties.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if calculated property.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isGenerated"><span class="type-signature"></span>isGenerated()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property value is automatically generated when a new record is
+saved into the records persistent storage. This flag is used in extensions
+and is not used in the core record types library implementation directly.
+Unless overridden in an extension, the method returns <code>false</code>
+for all properties.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if generated property.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="isId"><span class="type-signature"></span>isId()</h4>
     
     
@@ -1889,6 +2105,116 @@ reference property. Such property will have
 <div class="param-desc">
     <code>true</code> if polymorphic reference
 property.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="isRecordMetaInfo"><span class="type-signature"></span>isRecordMetaInfo()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tell if the property is a record meta-info property. Record meta-info
+properties are special propeties automatically maintained by the library
+that describe some technical aspects of the record, such as creation and
+modification timestamps, record version, etc. Meta-info properties can be
+included when the record is read from the persistent storage and are
+ignored when the record is saved into the persistent storage. This flag is
+used in extensions and is not used in the core record types library
+implementation directly. Unless overridden in an extension, the method
+returns <code>false</code> for all properties.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <code>true</code> if record meta-info property.
 </div>
 
 

@@ -767,6 +767,322 @@ result object promise.
             
 <hr>
 <dt>
+    <h4 class="name" id="dynamicUpdate"><span class="type-signature"></span>dynamicUpdate(recordTypeName, patchSpecProvider, filterSpec [, orderSpec] [, passThrough])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Convenience shortcut for building and executing a fetch DBO followed by a
+sequence of update DBOs for each fetched record. The main difference from
+the update() method
+is that this method allows building patch specification individually for
+each matched record based on the matched record data.
+
+<p>Note, no post-update validation is performed.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Name of the record type to update.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>patchSpecProvider</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function that takes a record as its
+only argument and returns the patch specification in JSON Patch format.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filterSpec</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Selector for records to update.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>orderSpec</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Order specification. The records are
+updated in the specified order.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>passThrough</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If provided, the returned promise resolves with
+this value instead of the update DBO result (which is lost in that case).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="module-x2node-dbos-DBOFactory.html#buildFetch">buildFetch()</a></li>
+			
+			<li><a href="module-x2node-dbos-DBOFactory.html#buildUpdate">buildUpdate()</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Promise of
+either the update result object or the pass through object.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="module-x2node-dbos-UpdateDBO.html#~Result">module:x2node-dbos~UpdateDBO~Result</a>></span>
+|
+
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="fetch"><span class="type-signature"></span>fetch(recordTypeName, querySpec)</h4>
     
     
@@ -2376,7 +2692,7 @@ records do exist, the promise is fulfulled with nothing.
             
 <hr>
 <dt>
-    <h4 class="name" id="update"><span class="type-signature"></span>update(recordTypeName, patch, filterSpec [, passThrough])</h4>
+    <h4 class="name" id="update"><span class="type-signature"></span>update(recordTypeName, patchSpec, filterSpec [, passThrough])</h4>
     
     
 </dt>
@@ -2385,6 +2701,8 @@ records do exist, the promise is fulfulled with nothing.
     
     <div class="description">
         Convenience shortcut for building and executing an update DBO.
+
+<p>Note, no post-update validation is performed.
     </div>
     
 
@@ -2453,7 +2771,7 @@ records do exist, the promise is fulfulled with nothing.
 
         <tr>
             
-                <td class="name"><code>patch</code></td>
+                <td class="name"><code>patchSpec</code></td>
             
 
             <td class="type">
@@ -2478,7 +2796,8 @@ records do exist, the promise is fulfulled with nothing.
 
             
 
-            <td class="description last">Update specification in JSON Patch format.</td>
+            <td class="description last">Update specification in JSON Patch
+format.</td>
         </tr>
 
     

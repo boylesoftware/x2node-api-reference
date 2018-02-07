@@ -1574,7 +1574,7 @@ invalid or the record type is unknown.
             
 <hr>
 <dt>
-    <h4 class="name" id="buildUpdate"><span class="type-signature"></span>buildUpdate(recordTypeName, patch [, filter])</h4>
+    <h4 class="name" id="buildUpdate"><span class="type-signature"></span>buildUpdate(recordTypeName, patch [, filterOrFetcher])</h4>
     
     
 </dt>
@@ -1700,13 +1700,16 @@ flag and <code>failedRecordIds</code> array).
 
         <tr>
             
-                <td class="name"><code>filter</code></td>
+                <td class="name"><code>filterOrFetcher</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">Array.&lt;Array></span>
+|
+
+<span class="param-type"><a href="module-x2node-dbos-UpdateDBO.html#~recordsFetcher">module:x2node-dbos~UpdateDBO~recordsFetcher</a></span>
 
 
 
@@ -1727,8 +1730,11 @@ flag and <code>failedRecordIds</code> array).
 
             
 
-            <td class="description last">The filter specification. If unspecified,
-all records of the type are updated.</td>
+            <td class="description last">Either, filter specification or function that provides the DBO with
+records, on which to perform the update. If fetcher function is provided,
+the DBO will not* perform the initial fetch and lock for the records. If
+neither filter nor fetcher function is specified, all records of the type
+are fetched, locked and updated (should be exceptionally rare case).</td>
         </tr>
 
     

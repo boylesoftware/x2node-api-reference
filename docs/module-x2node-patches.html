@@ -709,6 +709,303 @@ to apply the patch to records.
     
 </dd>
 
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".fromDiff"><span class="type-signature">&lt;static> </span>fromDiff(recordTypes, recordTypeName, recOld, recNew)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Build patch specification by analyzing the difference between two record
+versions. The top record id property is allowed to be missing in the provided
+new record (if present, must be the same). View, calculated and record
+meta-info properties are ignored. Unrecognized properties in the new record
+are not allowed. The resulting patch specification may still be invalid. For
+example, the function does not check if properties are modifiable or
+optional. Attempt to build a patch from the resulting specification will
+reveal the error. The array properties are assumed to be sorted using the
+same criteria in both old and new records. Elements of nested object arrays
+must have id property. All elements in the old record must have an id value.
+Elements in the new record without the id or with an id that is not found in
+the old array are assumed to be new and are inserted.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-records-RecordTypesLibrary.html">module:x2node-records~RecordTypesLibrary</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Record types
+library.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recordTypeName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the record type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recOld</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Original record.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recNew</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">New record.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    <ul>
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the provided record type name
+is invalid, or the specified old record object is not an object or is
+<code>null</code>.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2UsageError.html">module:x2node-common.X2UsageError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the provided new record
+object is not an object, is <code>null</code>, or contains invalid property
+values. Note, that the validity of the specified old object property
+values is not checked and is assumed to be always valid and complete.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="module-x2node-common.X2SyntaxError.html">module:x2node-common.X2SyntaxError</a></span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+</li>
+        </ul>
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    RFC 6902 JSON patch specification, which, when
+applied to <code>recOld</code> updates it to become identical to
+<code>recNew</code>.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
         </dl>
     
 
