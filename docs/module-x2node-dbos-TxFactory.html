@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>X2 Framework for Node.js Classes</title>
+	<title>X2 Framework for Node.js Class: TxFactory</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -100,14 +100,18 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Classes</h1>
+	<h1 class="page-title">Class: TxFactory</h1>
 <section>
 
 <header>
     
         <h2>
+            <span class="ancestors"><a href="module-x2node-dbos.html">x2node-dbos</a>~</span>
         
+        TxFactory
         </h2>
+        
+            <div class="class-description">Database transactions factory.</div>
         
     
 </header>
@@ -117,8 +121,105 @@
     <div class="container-overview">
     
         
+<hr>
+<dt>
+    <h4 class="name" id="TxFactory"><span class="type-signature"></span>new TxFactory(dbDriver, ds)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <strong>Note:</strong> The constructor is not accessible from the client
+code. Instances are created using DBO factory's
+<a href="module-x2node-dbos-DBOFactory.html#createTxFactory">createTxFactory()</a>
+method.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
 
         
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dbDriver</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos.DBDriver.html">module:x2node-dbos.DBDriver</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">DB driver.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-dbos.DataSource.html">module:x2node-dbos.DataSource</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Connections data source.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -158,7 +259,21 @@
 </dl>
 
 
-        
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
     
     </div>
 
@@ -167,139 +282,6 @@
     
 
     
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="module-x2node-common.X2DataError.html">X2DataError</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-common.X2SyntaxError.html">X2SyntaxError</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-common.X2UsageError.html">X2UsageError</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos.BasicDBDriver.html">BasicDBDriver</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-DBOExecutionContext.html">DBOExecutionContext</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-DBOFactory.html">DBOFactory</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-DeleteDBO.html">DeleteDBO</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-FetchDBO.html">FetchDBO</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-InsertDBO.html">InsertDBO</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-Transaction.html">Transaction</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-TxFactory.html">TxFactory</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos-UpdateDBO.html">UpdateDBO</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-patches-RecordPatch.html">RecordPatch</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-pointers-RecordElementPointer.html">RecordElementPointer</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-records-LibraryConstructionContext.html">LibraryConstructionContext</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-records-PropertiesContainer.html">PropertiesContainer</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-records-PropertyDescriptor.html">PropertyDescriptor</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-records-RecordTypeDescriptor.html">RecordTypeDescriptor</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-records-RecordTypesLibrary.html">RecordTypesLibrary</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-records-RecordTypesLibraryFactory.html">RecordTypesLibraryFactory</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-rsparser-ResultSetParser.html">ResultSetParser</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-validators-ValidationContext.html">ValidationContext</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-validators-ValidationErrors.html">ValidationErrors</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws.BasicAuthenticator.html">BasicAuthenticator</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws.CachingActorsRegistry.html">CachingActorsRegistry</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-auth-jwt-JWTAuthenticator.html">JWTAuthenticator</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-resources.CollectionResourceHandler.html">CollectionResourceHandler</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-resources.IndividualResourceHandler.html">IndividualResourceHandler</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-resources-AbstractResourceHandler.html">AbstractResourceHandler</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-resources-ResourceHandlersFactory.html">ResourceHandlersFactory</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-resources-TransactionContext.html">TransactionContext</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-Application.html">Application</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-ServiceCall.html">ServiceCall</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-ServiceResponse.html">ServiceResponse</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Mixins</h3>
-
-        <dl>
-            <dt><a href="module-x2node-dbos.PropertiesContainerWithDBOs.html">PropertiesContainerWithDBOs</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos.PropertyDescriptorWithDBOs.html">PropertyDescriptorWithDBOs</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-dbos.RecordTypeDescriptorWithDBOs.html">RecordTypeDescriptorWithDBOs</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-rsparser.PropertyDescriptorWithRSParser.html">PropertyDescriptorWithRSParser</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-validators.PropertyDescriptorWithValidators.html">PropertyDescriptorWithValidators</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-validators.RecordTypeDescriptorWithValidators.html">RecordTypeDescriptorWithValidators</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-x2node-ws-resources.HandlerExtension.html">HandlerExtension</a></dt>
-            <dd></dd>
-        </dl>
-    
 
     
 
@@ -308,15 +290,13 @@
     
 
     
-
-    
-        <h3 class="subsection-title">Events</h3>
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
 <dt>
-    <h4 class="name" id="event:begin">begin</h4>
+    <h4 class="name" id="executeTransaction"><span class="type-signature"></span>executeTransaction(cb)</h4>
     
     
 </dt>
@@ -324,191 +304,70 @@
 
     
     <div class="description">
-        Transaction start event. Fired upon successful transaction start.
+        Create and execute a database transaction.
     </div>
     
 
     
 
     
-        <h5>Type: 
-<span class="param-type">string</span>
-
-
-</h5>
-    
 
     
     
+        <h5>Parameters:</h5>
+        
 
-    
-<dl class="details">
-    
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
+        <th>Type</th>
 
         
-            
-<hr>
-<dt>
-    <h4 class="name" id="event:commit">commit</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Transaction commit event. Fired upon successful transaction commit.
-    </div>
-    
-
-    
-
-    
-        <h5>Type: 
-<span class="param-type">string</span>
-
-
-</h5>
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
 
         
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
             
-<hr>
-<dt>
-    <h4 class="name" id="event:rollback">rollback</h4>
-    
-    
-</dt>
-<dd>
+                <td class="name"><code>cb</code></td>
+            
 
-    
-    <div class="description">
-        Transaction rollback event. Fired upon transaction rollback, whether the
-rollback was successful or not. If the rollback was unsuccessful, the
-event listener receives the rollback error.
-    </div>
-    
-
-    
-
-    
-        <h5>Type: 
-<span class="param-type">string</span>
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
 
 
-</h5>
-    
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function with the transaction logic. The
+function is passed the <a href="module-x2node-dbos-Transaction.html">transaction</a>
+as its only argument. The transaction is started by the time the callback
+is called. The callback may return a <code>Promise</code>. If the promise
+is rejected or the callback throws an error, the transaction is
+automatically rolled back. Otherwise, the transaction is committed.</td>
+        </tr>
 
     
+    </tbody>
+</table>
+
     
 
     
@@ -562,96 +421,42 @@ event listener receives the rollback error.
     
 
     
-
+    <h5>Returns:</h5>
     
-</dd>
+            
+<div class="param-desc">
+    The promise of the callback result. If the promise is
+successfully fulfilled, the transaction is committed. If an error happens
+and the transaction is rolled back, the promise is rejected with the
+error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
 
         
-            
-<hr>
-<dt>
-    <h4 class="name" id="event:shutdown">shutdown</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Application shutdown event. Fired after all active HTTP connections have
-completed.
-    </div>
-    
-
-    
-
-    
-        <h5>Type: 
-<span class="param-type">string</span>
-
-
-</h5>
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
     
 </dd>
 
         </dl>
+    
+
+    
+
     
 </article>
 
