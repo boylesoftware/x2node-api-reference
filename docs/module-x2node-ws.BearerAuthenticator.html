@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>X2 Framework for Node.js Class: CachingActorsRegistry</title>
+	<title>X2 Framework for Node.js Class: BearerAuthenticator</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -100,18 +100,20 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: CachingActorsRegistry</h1>
+	<h1 class="page-title">Class: BearerAuthenticator</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-x2node-ws.html">x2node-ws</a>~</span>
+            <span class="ancestors"><a href="module-x2node-ws.html">x2node-ws</a>.</span>
         
-        CachingActorsRegistry
+        BearerAuthenticator
         </h2>
         
-            <div class="class-description">Caching actors registry wrapper.</div>
+            <div class="class-description">Base abstract class for authenticators that use "Bearer" token in the
+"Authorization" HTTP request header (see
+<a href="https://tools.ietf.org/html/rfc6750">RFC 6750</a>).</div>
         
     
 </header>
@@ -123,121 +125,19 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="CachingActorsRegistry"><span class="type-signature"></span>new CachingActorsRegistry(registry, maxCached, ttl)</h4>
+    <h4 class="name" id="BearerAuthenticator"><span class="type-signature">&lt;abstract> </span>new BearerAuthenticator()</h4>
     
     
 </dt>
 <dd>
 
     
-    <div class="description">
-        Create new caching registry.
-    </div>
-    
 
     
 
     
 
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>registry</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="module-x2node-ws.ActorsRegistry.html">module:x2node-ws.ActorsRegistry</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The registry to wrap.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>maxCached</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Maximum number of cached actors.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ttl</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Milliseconds after which a cached actor is expired.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
     
 
     
@@ -258,7 +158,7 @@
     <dt class="implements">Implements:</dt>
     <dd class="implements"><ul>
         
-            <li><a href="module-x2node-ws.ActorsRegistry.html">module:x2node-ws.ActorsRegistry</a></li>
+            <li><a href="module-x2node-ws.Authenticator.html">module:x2node-ws.Authenticator</a></li>
         
     </ul></dd>
     
@@ -324,7 +224,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="invalidateCachedActor"><span class="type-signature"></span>invalidateCachedActor(handle)</h4>
+    <h4 class="name" id="addResponseHeaders"><span class="type-signature"></span>addResponseHeaders(call, response)</h4>
     
     
 </dt>
@@ -332,7 +232,9 @@
 
     
     <div class="description">
-        Invalidate cache entry for the actor specified by handler, if cached.
+        If present on the authenticator, called before sending HTTP response to give
+the authenticator a chance to add any authenticator-specific headers to the
+response.
     </div>
     
 
@@ -367,13 +269,13 @@
 
         <tr>
             
-                <td class="name"><code>handle</code></td>
+                <td class="name"><code>call</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="module-x2node-ws-ServiceCall.html">module:x2node-ws~ServiceCall</a></span>
 
 
 
@@ -384,7 +286,31 @@
 
             
 
-            <td class="description last">Actor handle.</td>
+            <td class="description last">The call.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-x2node-ws-ServiceResponse.html">module:x2node-ws~ServiceResponse</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The response.</td>
         </tr>
 
     
@@ -407,6 +333,13 @@
 
     
 
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="module-x2node-ws.Authenticator.html#addResponseHeaders">module:x2node-ws.Authenticator#addResponseHeaders</a></li>
+        
+    </ul></dd>
     
 
     
@@ -452,12 +385,16 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="lookupActor"><span class="type-signature"></span>lookupActor(handle [, creds])</h4>
+    <h4 class="name" id="authenticate"><span class="type-signature"></span>authenticate(call)</h4>
     
     
 </dt>
 <dd>
 
+    
+    <div class="description">
+        Authenticate the call.
+    </div>
     
 
     
@@ -479,8 +416,6 @@
         <th>Type</th>
 
         
-        <th>Argument</th>
-        
 
         
 
@@ -493,13 +428,13 @@
 
         <tr>
             
-                <td class="name"><code>handle</code></td>
+                <td class="name"><code>call</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="module-x2node-ws-ServiceCall.html">module:x2node-ws~ServiceCall</a></span>
 
 
 
@@ -507,52 +442,10 @@
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last">Actor handle from the authenticator.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>creds</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Registry-specific actor credentials, if any.</td>
+            <td class="description last">The call.</td>
         </tr>
 
     
@@ -579,7 +472,7 @@
     <dt class="implements">Implements:</dt>
     <dd class="implements"><ul>
         
-            <li><a href="module-x2node-ws.ActorsRegistry.html#lookupActor">module:x2node-ws.ActorsRegistry#lookupActor</a></li>
+            <li><a href="module-x2node-ws.Authenticator.html#authenticate">module:x2node-ws.Authenticator#authenticate</a></li>
         
     </ul></dd>
     
@@ -623,11 +516,165 @@
     
             
 <div class="param-desc">
-    Actor record or a promise of it. Returning <code>null</code> or a promise that
-resolves to a <code>null</code> means the actor does not exist for the handle.
-If <code>creds</code> is provided, may also mean that the credentials are
-invalid. If a promise is returned and the promise is rejected, it indicates an
-unexpected internal error.
+    Authenticated actor, <code>null</code> if could not authenticate, or a
+<code>Promise</code> of the above.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-x2node-common.Actor.html">module:x2node-common.Actor</a></span>
+|
+
+<span class="param-type">Promise.&lt;<a href="module-x2node-common.Actor.html">module:x2node-common.Actor</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="validateToken"><span class="type-signature">&lt;abstract> </span>validateToken(token)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Validate Bearer token and convert it to the actor. This method must be
+overridden and implemented in the subclass.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>token</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Bearer token from the "Auithorization" header.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Authenticated actor, <code>null</code> if could not authenticate, or a
+<code>Promise</code> of the above.
 </div>
 
 
